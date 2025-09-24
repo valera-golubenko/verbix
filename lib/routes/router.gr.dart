@@ -27,6 +27,22 @@ class AppFlowRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [AuthFlowPage]
+class AuthFlowRoute extends PageRouteInfo<void> {
+  const AuthFlowRoute({List<PageRouteInfo>? children})
+      : super(AuthFlowRoute.name, initialChildren: children);
+
+  static const String name = 'AuthFlowRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const AuthFlowPage();
+    },
+  );
+}
+
+/// generated route for
 /// [ExamplePage]
 class ExampleRoute extends PageRouteInfo<void> {
   const ExampleRoute({List<PageRouteInfo>? children})
@@ -38,6 +54,38 @@ class ExampleRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const ExamplePage();
+    },
+  );
+}
+
+/// generated route for
+/// [OnboardingFlowPage]
+class OnboardingFlowRoute extends PageRouteInfo<void> {
+  const OnboardingFlowRoute({List<PageRouteInfo>? children})
+      : super(OnboardingFlowRoute.name, initialChildren: children);
+
+  static const String name = 'OnboardingFlowRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const OnboardingFlowPage();
+    },
+  );
+}
+
+/// generated route for
+/// [OnboardingPage]
+class OnboardingRoute extends PageRouteInfo<void> {
+  const OnboardingRoute({List<PageRouteInfo>? children})
+      : super(OnboardingRoute.name, initialChildren: children);
+
+  static const String name = 'OnboardingRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const OnboardingPage();
     },
   );
 }

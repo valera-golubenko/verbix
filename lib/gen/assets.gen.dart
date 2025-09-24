@@ -24,11 +24,15 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/full_logo.png
+  AssetGenImage get fullLogo =>
+      const AssetGenImage('assets/images/full_logo.png');
+
   /// File path: assets/images/image.png
   AssetGenImage get image => const AssetGenImage('assets/images/image.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [image];
+  List<AssetGenImage> get values => [fullLogo, image];
 }
 
 class $AssetsLottieGen {
@@ -44,11 +48,27 @@ class $AssetsLottieGen {
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  /// File path: assets/svg/full_logo.svg
+  String get fullLogo => 'assets/svg/full_logo.svg';
+
+  /// File path: assets/svg/logo.svg
+  String get logo => 'assets/svg/logo.svg';
+
+  /// File path: assets/svg/onboarding1.svg
+  String get onboarding1 => 'assets/svg/onboarding1.svg';
+
+  /// File path: assets/svg/onboarding2.svg
+  String get onboarding2 => 'assets/svg/onboarding2.svg';
+
+  /// File path: assets/svg/onboarding3.svg
+  String get onboarding3 => 'assets/svg/onboarding3.svg';
+
   /// File path: assets/svg/smile.svg
   String get smile => 'assets/svg/smile.svg';
 
   /// List of all assets
-  List<String> get values => [smile];
+  List<String> get values =>
+      [fullLogo, logo, onboarding1, onboarding2, onboarding3, smile];
 }
 
 class Assets {

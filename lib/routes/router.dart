@@ -2,7 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../ui/pages/app/app_flow_page.dart';
+import '../ui/pages/app/pages/auth/auth_flow_page.dart';
 import '../ui/pages/app/pages/example/example_page.dart';
+import '../ui/pages/app/pages/onboarding/onboarding_flow_page.dart';
+import '../ui/pages/app/pages/onboarding/onboarding_page.dart';
 import '../ui/pages/app/pages/settings/settings_page.dart';
 import '../ui/pages/splash/splash_page.dart';
 
@@ -22,6 +25,10 @@ class AppRouter extends RootStackRouter {
   List<AutoRoute> get routes {
     return [
       AutoRoute(page: SplashRoute.page, path: '/'),
+      AutoRoute(page: AuthFlowRoute.page, children: []),
+      AutoRoute(page: OnboardingFlowRoute.page, children: [
+        AutoRoute(page: OnboardingRoute.page, path: ''),
+      ]),
       AutoRoute(page: AppFlowRoute.page, children: [
         AutoRoute(page: ExampleRoute.page, path: ''),
         AutoRoute(page: SettingsRoute.page),

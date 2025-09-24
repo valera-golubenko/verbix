@@ -1,0 +1,48 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Verbix",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "Verbix (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "Verbix (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "Verbix Prod",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define=prod=true"
+            ]
+        },
+        {
+            "name": "Verbix Prod (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "args": [
+                "--dart-define=prod=true"
+            ]
+        },
+        {
+            "name": "Verbix Prod (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "args": [
+                "--dart-define=prod=true"
+            ]
+        }
+    ]
+}

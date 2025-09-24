@@ -2,6 +2,8 @@
 
 part of 'example_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -74,3 +76,5 @@ class _ExampleApi implements ExampleApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

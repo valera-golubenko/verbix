@@ -2,6 +2,8 @@
 
 part of 'posts_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -74,3 +76,5 @@ class _PostsApi implements PostsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

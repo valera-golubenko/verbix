@@ -33,11 +33,9 @@ class VerbixApp extends StatelessWidget {
           deepLinkBuilder: (deepLink) async {
             final token = await locator<TokenService>().getToken();
 
-            if (token.isNotEmpty) {
-              return const DeepLink([SplashRoute()]);
-            }
+            if (token.isNotEmpty) return const DeepLink([AppFlowRoute()]);
 
-            return const DeepLink([AppFlowRoute()]);
+            return const DeepLink([SplashRoute()]);
           },
         ),
         builder: (context, child) {

@@ -107,12 +107,12 @@ Future<_i174.GetIt> $initGetIt(
       () => exampleApiModule.getInstance(gh<_i361.Dio>()));
   gh.lazySingleton<_i229.ExampleService>(
       () => _i229.ExampleService(gh<_i1045.ExampleApi>()));
+  gh.factory<_i180.ExampleCubit>(
+      () => _i180.ExampleCubit(gh<_i229.ExampleService>()));
   gh.lazySingleton<_i354.PostsService>(
       () => _i354.PostsService(gh<_i652.PostsApi>()));
   gh.factory<_i286.PostsCubit>(
       () => _i286.PostsCubit(gh<_i354.PostsService>()));
-  gh.factory<_i180.ExampleCubit>(
-      () => _i180.ExampleCubit(gh<_i229.ExampleService>()));
   return getIt;
 }
 
