@@ -90,4 +90,34 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get verification => 'Verificación';
+
+  @override
+  String get learnWordsNotRules => 'Learn Words, Not Rules';
+
+  @override
+  String get rememberNewEnglishWords =>
+      'Remember new English words easily and quickly.';
+
+  @override
+  String get yourPersonalProgress => 'Your Personal Progress';
+
+  @override
+  String get trackYourResultsAndStay =>
+      'Track your results and stay motivated every day.';
+
+  @override
+  String get practiceWithoutBoredom => 'Practice Without Boredom';
+
+  @override
+  String get quizzesFlashcardsAndRepetitions =>
+      'Quizzes, flashcards, and repetitions — in a simple format.';
+
+  @override
+  String get alreadyGotAnAccount => 'Already got an account?';
+
+  @override
+  String get letsGo => 'Let\'s go!';
+
+  @override
+  String get login => 'Login';
 }

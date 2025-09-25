@@ -253,6 +253,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Verification'**
   String get verification;
+
+  /// No description provided for @learnWordsNotRules.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn Words, Not Rules'**
+  String get learnWordsNotRules;
+
+  /// No description provided for @rememberNewEnglishWords.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember new English words easily and quickly.'**
+  String get rememberNewEnglishWords;
+
+  /// No description provided for @yourPersonalProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Personal Progress'**
+  String get yourPersonalProgress;
+
+  /// No description provided for @trackYourResultsAndStay.
+  ///
+  /// In en, this message translates to:
+  /// **'Track your results and stay motivated every day.'**
+  String get trackYourResultsAndStay;
+
+  /// No description provided for @practiceWithoutBoredom.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice Without Boredom'**
+  String get practiceWithoutBoredom;
+
+  /// No description provided for @quizzesFlashcardsAndRepetitions.
+  ///
+  /// In en, this message translates to:
+  /// **'Quizzes, flashcards, and repetitions — in a simple format.'**
+  String get quizzesFlashcardsAndRepetitions;
+
+  /// No description provided for @alreadyGotAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already got an account?'**
+  String get alreadyGotAnAccount;
+
+  /// No description provided for @letsGo.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s go!'**
+  String get letsGo;
+
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get login;
 }
 
 class _AppLocalizationsDelegate

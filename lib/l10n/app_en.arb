@@ -25,5 +25,14 @@
     "confirm": "confirm",
     "cancel": "cancel",
     "ok": "OK",
-    "verification": "Verification"
+    "verification": "Verification",
+    "learnWordsNotRules": "Learn Words, Not Rules",
+    "rememberNewEnglishWords": "Remember new English words easily and quickly.",
+    "yourPersonalProgress": "Your Personal Progress",
+    "trackYourResultsAndStay": "Track your results and stay motivated every day.",
+    "practiceWithoutBoredom": "Practice Without Boredom",
+    "quizzesFlashcardsAndRepetitions": "Quizzes, flashcards, and repetitions — in a simple format.",
+    "alreadyGotAnAccount": "Already got an account?",
+    "letsGo": "Let's go!",
+    "login": "Login"
 }
