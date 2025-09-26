@@ -34,5 +34,15 @@
     "quizzesFlashcardsAndRepetitions": "Quizzes, flashcards, and repetitions — in a simple format.",
     "alreadyGotAnAccount": "Already got an account?",
     "letsGo": "Let's go!",
-    "login": "Login"
+    "login": "Login",
+    "welcomeToVerbix": "Welcome to Verbix!",
+    "signUpWithApple": "Sign up with Apple",
+    "signUpWithGoogle": "Sign up with Google",
+    "oR": "OR",
+    "fullName": "Full name",
+    "email": "Email",
+    "password": "Password",
+    "createAnAccount": "Create an account",
+    "signIn": "Sign in",
+    "repeatPassword": "Repeat password"
 }

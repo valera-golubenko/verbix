@@ -22,8 +22,8 @@ import '../api/interceptors/api_interceptors.dart' as _i956;
 import '../api/request_tracker/request_tracker.dart' as _i250;
 import '../api/retrofit/example/example_api.dart' as _i1045;
 import '../api/retrofit/posts/posts_api.dart' as _i652;
+import '../core/auth/auth_cubit.dart' as _i976;
 import '../core/example/example_cubit.dart' as _i180;
-import '../core/posts/posts_cubit.dart' as _i286;
 import '../core/settings/settings_state.dart' as _i751;
 import '../core/snack_messages/snack_messages_state.dart' as _i935;
 import '../routes/module/route_module.dart' as _i402;
@@ -69,6 +69,7 @@ Future<_i174.GetIt> $initGetIt(
   );
   gh.factory<_i833.DeviceInfoPlugin>(() => diModule.deviceInfo);
   gh.factory<_i694.AppObserver>(() => _i694.AppObserver());
+  gh.factory<_i976.AuthCubit>(() => _i976.AuthCubit());
   gh.singleton<_i935.SnackMessagesState>(() => _i935.SnackMessagesState());
   gh.lazySingleton<_i250.RequestTracker>(() => _i250.RequestTracker());
   gh.lazySingleton<_i393.AppRouter>(() => routeModule.router());
@@ -111,8 +112,6 @@ Future<_i174.GetIt> $initGetIt(
       () => _i180.ExampleCubit(gh<_i229.ExampleService>()));
   gh.lazySingleton<_i354.PostsService>(
       () => _i354.PostsService(gh<_i652.PostsApi>()));
-  gh.factory<_i286.PostsCubit>(
-      () => _i286.PostsCubit(gh<_i354.PostsService>()));
   return getIt;
 }
 

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'posts_cubit.dart';
+part of 'auth_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,62 +13,60 @@ part of 'posts_cubit.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$PostsState {
+mixin _$AuthState {
   StateStatus get status;
   String get message;
-  List<ExampleModel> get posts;
+  String get email;
 
-  /// Create a copy of PostsState
+  /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $PostsStateCopyWith<PostsState> get copyWith =>
-      _$PostsStateCopyWithImpl<PostsState>(this as PostsState, _$identity);
+  $AuthStateCopyWith<AuthState> get copyWith =>
+      _$AuthStateCopyWithImpl<AuthState>(this as AuthState, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is PostsState &&
+            other is AuthState &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.message, message) || other.message == message) &&
-            const DeepCollectionEquality().equals(other.posts, posts));
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, status, message, const DeepCollectionEquality().hash(posts));
+  int get hashCode => Object.hash(runtimeType, status, message, email);
 
   @override
   String toString() {
-    return 'PostsState(status: $status, message: $message, posts: $posts)';
+    return 'AuthState(status: $status, message: $message, email: $email)';
   }
 }
 
 /// @nodoc
-abstract mixin class $PostsStateCopyWith<$Res> {
-  factory $PostsStateCopyWith(
-          PostsState value, $Res Function(PostsState) _then) =
-      _$PostsStateCopyWithImpl;
+abstract mixin class $AuthStateCopyWith<$Res> {
+  factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) _then) =
+      _$AuthStateCopyWithImpl;
   @useResult
-  $Res call({StateStatus status, String message, List<ExampleModel> posts});
+  $Res call({StateStatus status, String message, String email});
 }
 
 /// @nodoc
-class _$PostsStateCopyWithImpl<$Res> implements $PostsStateCopyWith<$Res> {
-  _$PostsStateCopyWithImpl(this._self, this._then);
+class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
+  _$AuthStateCopyWithImpl(this._self, this._then);
 
-  final PostsState _self;
-  final $Res Function(PostsState) _then;
+  final AuthState _self;
+  final $Res Function(AuthState) _then;
 
-  /// Create a copy of PostsState
+  /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? status = null,
     Object? message = null,
-    Object? posts = null,
+    Object? email = null,
   }) {
     return _then(_self.copyWith(
       status: null == status
@@ -79,16 +77,16 @@ class _$PostsStateCopyWithImpl<$Res> implements $PostsStateCopyWith<$Res> {
           ? _self.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      posts: null == posts
-          ? _self.posts
-          : posts // ignore: cast_nullable_to_non_nullable
-              as List<ExampleModel>,
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
-/// Adds pattern-matching-related methods to [PostsState].
-extension PostsStatePatterns on PostsState {
+/// Adds pattern-matching-related methods to [AuthState].
+extension AuthStatePatterns on AuthState {
   /// A variant of `map` that fallback to returning `orElse`.
   ///
   /// It is equivalent to doing:
@@ -103,12 +101,12 @@ extension PostsStatePatterns on PostsState {
 
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_PostsState value)? $default, {
+    TResult Function(_AuthState value)? $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
-      case _PostsState() when $default != null:
+      case _AuthState() when $default != null:
         return $default(_that);
       case _:
         return orElse();
@@ -130,11 +128,11 @@ extension PostsStatePatterns on PostsState {
 
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_PostsState value) $default,
+    TResult Function(_AuthState value) $default,
   ) {
     final _that = this;
     switch (_that) {
-      case _PostsState():
+      case _AuthState():
         return $default(_that);
       case _:
         throw StateError('Unexpected subclass');
@@ -155,11 +153,11 @@ extension PostsStatePatterns on PostsState {
 
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_PostsState value)? $default,
+    TResult? Function(_AuthState value)? $default,
   ) {
     final _that = this;
     switch (_that) {
-      case _PostsState() when $default != null:
+      case _AuthState() when $default != null:
         return $default(_that);
       case _:
         return null;
@@ -180,15 +178,14 @@ extension PostsStatePatterns on PostsState {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            StateStatus status, String message, List<ExampleModel> posts)?
+    TResult Function(StateStatus status, String message, String email)?
         $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
-      case _PostsState() when $default != null:
-        return $default(_that.status, _that.message, _that.posts);
+      case _AuthState() when $default != null:
+        return $default(_that.status, _that.message, _that.email);
       case _:
         return orElse();
     }
@@ -209,14 +206,12 @@ extension PostsStatePatterns on PostsState {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            StateStatus status, String message, List<ExampleModel> posts)
-        $default,
+    TResult Function(StateStatus status, String message, String email) $default,
   ) {
     final _that = this;
     switch (_that) {
-      case _PostsState():
-        return $default(_that.status, _that.message, _that.posts);
+      case _AuthState():
+        return $default(_that.status, _that.message, _that.email);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -236,14 +231,13 @@ extension PostsStatePatterns on PostsState {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            StateStatus status, String message, List<ExampleModel> posts)?
+    TResult? Function(StateStatus status, String message, String email)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
-      case _PostsState() when $default != null:
-        return $default(_that.status, _that.message, _that.posts);
+      case _AuthState() when $default != null:
+        return $default(_that.status, _that.message, _that.email);
       case _:
         return null;
     }
@@ -252,13 +246,10 @@ extension PostsStatePatterns on PostsState {
 
 /// @nodoc
 
-class _PostsState extends PostsState {
-  const _PostsState(
-      {this.status = StateStatus.initial,
-      this.message = '',
-      final List<ExampleModel> posts = const []})
-      : _posts = posts,
-        super._();
+class _AuthState extends AuthState {
+  const _AuthState(
+      {this.status = StateStatus.initial, this.message = '', this.email = ''})
+      : super._();
 
   @override
   @JsonKey()
@@ -266,71 +257,65 @@ class _PostsState extends PostsState {
   @override
   @JsonKey()
   final String message;
-  final List<ExampleModel> _posts;
   @override
   @JsonKey()
-  List<ExampleModel> get posts {
-    if (_posts is EqualUnmodifiableListView) return _posts;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_posts);
-  }
+  final String email;
 
-  /// Create a copy of PostsState
+  /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$PostsStateCopyWith<_PostsState> get copyWith =>
-      __$PostsStateCopyWithImpl<_PostsState>(this, _$identity);
+  _$AuthStateCopyWith<_AuthState> get copyWith =>
+      __$AuthStateCopyWithImpl<_AuthState>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PostsState &&
+            other is _AuthState &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.message, message) || other.message == message) &&
-            const DeepCollectionEquality().equals(other._posts, _posts));
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, message,
-      const DeepCollectionEquality().hash(_posts));
+  int get hashCode => Object.hash(runtimeType, status, message, email);
 
   @override
   String toString() {
-    return 'PostsState(status: $status, message: $message, posts: $posts)';
+    return 'AuthState(status: $status, message: $message, email: $email)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$PostsStateCopyWith<$Res>
-    implements $PostsStateCopyWith<$Res> {
-  factory _$PostsStateCopyWith(
-          _PostsState value, $Res Function(_PostsState) _then) =
-      __$PostsStateCopyWithImpl;
+abstract mixin class _$AuthStateCopyWith<$Res>
+    implements $AuthStateCopyWith<$Res> {
+  factory _$AuthStateCopyWith(
+          _AuthState value, $Res Function(_AuthState) _then) =
+      __$AuthStateCopyWithImpl;
   @override
   @useResult
-  $Res call({StateStatus status, String message, List<ExampleModel> posts});
+  $Res call({StateStatus status, String message, String email});
 }
 
 /// @nodoc
-class __$PostsStateCopyWithImpl<$Res> implements _$PostsStateCopyWith<$Res> {
-  __$PostsStateCopyWithImpl(this._self, this._then);
+class __$AuthStateCopyWithImpl<$Res> implements _$AuthStateCopyWith<$Res> {
+  __$AuthStateCopyWithImpl(this._self, this._then);
 
-  final _PostsState _self;
-  final $Res Function(_PostsState) _then;
+  final _AuthState _self;
+  final $Res Function(_AuthState) _then;
 
-  /// Create a copy of PostsState
+  /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $Res call({
     Object? status = null,
     Object? message = null,
-    Object? posts = null,
+    Object? email = null,
   }) {
-    return _then(_PostsState(
+    return _then(_AuthState(
       status: null == status
           ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -339,10 +324,10 @@ class __$PostsStateCopyWithImpl<$Res> implements _$PostsStateCopyWith<$Res> {
           ? _self.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      posts: null == posts
-          ? _self._posts
-          : posts // ignore: cast_nullable_to_non_nullable
-              as List<ExampleModel>,
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }

@@ -120,4 +120,34 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get login => 'Login';
+
+  @override
+  String get welcomeToVerbix => 'Welcome to Verbix!';
+
+  @override
+  String get signUpWithApple => 'Sign up with Apple';
+
+  @override
+  String get signUpWithGoogle => 'Sign up with Google';
+
+  @override
+  String get oR => 'OR';
+
+  @override
+  String get fullName => 'Full name';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get createAnAccount => 'Create an account';
+
+  @override
+  String get signIn => 'Sign in';
+
+  @override
+  String get repeatPassword => 'Repeat password';
 }

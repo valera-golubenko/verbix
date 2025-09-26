@@ -8,6 +8,16 @@
     "quizzesFlashcardsAndRepetitions",
     "alreadyGotAnAccount",
     "letsGo",
-    "login"
+    "login",
+    "welcomeToVerbix",
+    "signUpWithApple",
+    "signUpWithGoogle",
+    "oR",
+    "fullName",
+    "email",
+    "password",
+    "createAnAccount",
+    "signIn",
+    "repeatPassword"
   ]
 }

@@ -4,19 +4,14 @@ import 'package:flutter_base_kit/flutter_base_kit.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../models/example/example_model.dart';
-import '../../services/api/posts/posts_service.dart';
+import 'auth_mixin.dart';
 
-part 'posts_state.dart';
-part 'posts_cubit.freezed.dart';
+part 'auth_state.dart';
+part 'auth_cubit.freezed.dart';
 
 @injectable
-class PostsCubit extends BaseCubit<PostsState> {
-  final PostsService _postsService;
-
-  PostsCubit(
-    this._postsService,
-  ) : super(const PostsState());
+class AuthCubit extends BaseCubit<AuthState> with AuthCubitMix {
+  AuthCubit() : super(const AuthState());
 
   Future<void> init() async {
     safeAction(() async {
@@ -32,9 +27,11 @@ class PostsCubit extends BaseCubit<PostsState> {
   Future<void> getPosts() async {
     await safeAction(() async {
       emit(state.copyWith(status: StateStatus.refresh));
-      final result = await _postsService.getPosts();
-      emit(state.copyWith(posts: result.data));
     });
     emit(state.copyWith(status: StateStatus.loaded));
   }
+
+  Future<void> appleAuth() async {}
+
+  Future<void> googleAuth() async {}
 }

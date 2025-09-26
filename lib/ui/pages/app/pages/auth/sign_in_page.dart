@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
+import '../../../../../gen/assets.gen.dart';
 import '../../../../../l10n/localization_helper.dart';
 import '../../../../../routes/router.dart';
 import '../../../../../themes/app_theme.dart';
@@ -43,18 +45,34 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFFFFFFF),
-      appBar: AppBar(
-        title: Text('Sign In'),
-      ),
       body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            _buildAppBar(),
             const SizedBox(height: 20, width: double.infinity),
             _buildAlreadyGotAnAccount()
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildAppBar() {
+    return Row(
+      children: [
+        SvgPicture.asset(Assets.svg.icons.chevronLeft),
+        Expanded(
+          child: Text(
+            _strings.signIn,
+            textAlign: TextAlign.center,
+            style: _textTheme.headlineSmall?.copyWith(
+              color: Colors.black,
+              fontSize: 20,
+            ),
+          ),
+        ),
+        const SizedBox(width: 48),
+      ],
     );
   }
 

@@ -4,7 +4,7 @@ import 'package:provider/single_child_widget.dart';
 
 import '../di/di.dart';
 import 'example/example_cubit.dart';
-import 'posts/posts_cubit.dart';
+import 'auth/auth_cubit.dart';
 import 'settings/settings_state.dart';
 import 'snack_messages/snack_messages_state.dart';
 
@@ -14,7 +14,7 @@ abstract class Providers {
       ChangeNotifierProvider<SettingsState>(create: (_) => locator()..init()),
       ChangeNotifierProvider<SnackMessagesState>(create: (_) => locator()),
       BlocProvider<ExampleCubit>(create: (_) => locator()),
-      BlocProvider<PostsCubit>(create: (_) => locator()),
+      BlocProvider<AuthCubit>(create: (_) => locator()),
     ];
   }
 }

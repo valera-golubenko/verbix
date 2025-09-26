@@ -307,6 +307,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Login'**
   String get login;
+
+  /// No description provided for @welcomeToVerbix.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to Verbix!'**
+  String get welcomeToVerbix;
+
+  /// No description provided for @signUpWithApple.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up with Apple'**
+  String get signUpWithApple;
+
+  /// No description provided for @signUpWithGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up with Google'**
+  String get signUpWithGoogle;
+
+  /// No description provided for @oR.
+  ///
+  /// In en, this message translates to:
+  /// **'OR'**
+  String get oR;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full name'**
+  String get fullName;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @createAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create an account'**
+  String get createAnAccount;
+
+  /// No description provided for @signIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get signIn;
+
+  /// No description provided for @repeatPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat password'**
+  String get repeatPassword;
 }
 
 class _AppLocalizationsDelegate

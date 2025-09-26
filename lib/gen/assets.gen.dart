@@ -51,6 +51,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/full_logo.svg
   String get fullLogo => 'assets/svg/full_logo.svg';
 
+  /// Directory path: assets/svg/icons
+  $AssetsSvgIconsGen get icons => const $AssetsSvgIconsGen();
+
   /// File path: assets/svg/logo.svg
   String get logo => 'assets/svg/logo.svg';
 
@@ -69,6 +72,22 @@ class $AssetsSvgGen {
   /// List of all assets
   List<String> get values =>
       [fullLogo, logo, onboarding1, onboarding2, onboarding3, smile];
+}
+
+class $AssetsSvgIconsGen {
+  const $AssetsSvgIconsGen();
+
+  /// File path: assets/svg/icons/apple.svg
+  String get apple => 'assets/svg/icons/apple.svg';
+
+  /// File path: assets/svg/icons/chevronLeft.svg
+  String get chevronLeft => 'assets/svg/icons/chevronLeft.svg';
+
+  /// File path: assets/svg/icons/google.svg
+  String get google => 'assets/svg/icons/google.svg';
+
+  /// List of all assets
+  List<String> get values => [apple, chevronLeft, google];
 }
 
 class Assets {
