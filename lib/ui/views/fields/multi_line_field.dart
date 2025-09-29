@@ -72,7 +72,7 @@ class _MultiLineFieldState extends State<MultiLineField> {
       borderSide: !widget.withBorder
           ? BorderSide.none
           : BorderSide(
-              color: context.designs.surface,
+              color: context.designs.mainColor,
             ),
       borderRadius: widget.borderRadius ?? BorderRadius.circular(10),
       gapPadding: 1,
@@ -81,18 +81,18 @@ class _MultiLineFieldState extends State<MultiLineField> {
       borderSide: !widget.withBorder
           ? BorderSide.none
           : BorderSide(
-              color: context.designs.surface,
+              color: context.designs.mainColor,
             ),
     );
     final focusedErrorBorder = border.copyWith(
       borderSide: !widget.withBorder
           ? BorderSide.none
           : BorderSide(
-              color: context.designs.error,
+              color: context.designs.statusError,
             ),
     );
     return TextFormField(
-      cursorColor: widget.textColor ?? context.designs.textPrimary,
+      cursorColor: widget.textColor ?? context.designs.neutral.tone0,
       focusNode: _focus,
       onTapOutside: _onTapOutside,
       controller: widget.controller,
@@ -102,7 +102,7 @@ class _MultiLineFieldState extends State<MultiLineField> {
       style: context.textTheme.bodyMedium?.copyWith(
         fontSize: widget.fontSize,
         fontWeight: widget.fontWeight ?? FontWeight.w900,
-        color: widget.textColor ?? context.designs.textPrimary,
+        color: widget.textColor ?? context.designs.neutral.tone0,
       ),
       textCapitalization: widget.textCapitalization,
       scrollPadding: const EdgeInsets.only(),
@@ -113,7 +113,7 @@ class _MultiLineFieldState extends State<MultiLineField> {
         contentPadding: widget.contentPadding,
         hintText: widget.hintText,
         border: InputBorder.none,
-        fillColor: widget.backgroundColor ?? context.designs.surface,
+        fillColor: widget.backgroundColor ?? context.designs.mainColor,
         filled: true,
         focusedBorder: focusedBorder,
         disabledBorder: border,
@@ -124,17 +124,17 @@ class _MultiLineFieldState extends State<MultiLineField> {
         errorMaxLines: 3,
         counterStyle: context.textTheme.bodyMedium?.copyWith(
           fontSize: widget.fontSize,
-          color: context.designs.textPrimary,
+          color: context.designs.neutral.tone50,
         ),
         hintStyle: context.textTheme.bodyMedium?.copyWith(
           fontSize: widget.fontSize,
-          color: context.designs.textPrimary,
+          color: context.designs.neutral.tone50,
         ),
         errorText: widget.errorText,
         helperText: widget.helperText,
         helperStyle: context.textTheme.bodyMedium?.copyWith(
           fontSize: widget.fontSize,
-          color: context.designs.textPrimary,
+          color: context.designs.neutral.tone50,
         ),
         counterText: widget.counterText ?? '',
         suffixIcon: widget.suffixIcon,

@@ -35,7 +35,9 @@ class AppSecondaryButton extends StatelessWidget {
         padding: padding ?? const EdgeInsets.fromLTRB(24, 12, 26, 12),
         decoration: BoxDecoration(
           border: Border.all(
-            color: isActive ? context.designs.primary : context.designs.primary,
+            color: isActive
+                ? context.designs.mainColor
+                : context.designs.mainSubtle,
           ),
           borderRadius: BorderRadius.circular(50),
         ),
@@ -45,7 +47,7 @@ class AppSecondaryButton extends StatelessWidget {
           style: context.textTheme.titleMedium?.copyWith(
               fontSize: fontSize ?? 17,
               fontWeight: fontWeight ?? FontWeight.w700,
-              color: colorText ?? context.designs.primary),
+              color: colorText ?? context.designs.neutral.tone0),
         ),
       ),
     );

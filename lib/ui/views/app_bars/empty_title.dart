@@ -36,7 +36,7 @@ class EmptyTitle extends StatelessWidget implements PreferredSizeWidget {
       actions: actions,
       flexibleSpace: Container(
         decoration: BoxDecoration(
-          gradient: context.designs.gradientAppBar,
+          gradient: context.designs.gradient,
         ),
       ),
       title: Text(titleText ?? ''),

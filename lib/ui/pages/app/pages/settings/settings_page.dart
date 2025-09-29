@@ -19,7 +19,7 @@ class SettingsPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           ListTile(
-            tileColor: context.designs.primary.withValues(alpha: 0.4),
+            tileColor: context.designs.mainColor.withValues(alpha: 0.4),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),
@@ -30,7 +30,7 @@ class SettingsPage extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           ListTile(
-            tileColor: context.designs.primary.withValues(alpha: 0.4),
+            tileColor: context.designs.mainColor.withValues(alpha: 0.4),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),
@@ -41,7 +41,7 @@ class SettingsPage extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           ListTile(
-            tileColor: context.designs.primary.withValues(alpha: 0.4),
+            tileColor: context.designs.mainColor.withValues(alpha: 0.4),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),
@@ -52,7 +52,7 @@ class SettingsPage extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           ListTile(
-            tileColor: context.designs.primary.withValues(alpha: 0.4),
+            tileColor: context.designs.mainColor.withValues(alpha: 0.4),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),
@@ -64,7 +64,7 @@ class SettingsPage extends StatelessWidget {
           const SizedBox(height: 8),
           ListTile(
             onTap: context.read<SettingsState>().switchTheme,
-            tileColor: context.designs.primary.withValues(alpha: 0.4),
+            tileColor: context.designs.mainColor.withValues(alpha: 0.4),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),

@@ -46,8 +46,8 @@ class SnackMessagesView extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(16, 4, 0, 4),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: designs.primary),
-          color: designs.background,
+          border: Border.all(color: designs.mainColor),
+          color: designs.mainSubtle,
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -58,13 +58,13 @@ class SnackMessagesView extends StatelessWidget {
                 style: context.textTheme.bodyMedium?.copyWith(
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
-                  color: designs.surface,
+                  color: designs.neutral.tone0,
                 ),
               ),
             ),
             IconButton(
               onPressed: SnackMessagesState.close,
-              icon: Icon(Icons.close, color: designs.primary),
+              icon: Icon(Icons.close, color: designs.mainDarker),
             )
           ],
         ),

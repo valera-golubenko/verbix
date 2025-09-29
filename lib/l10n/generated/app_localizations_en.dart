@@ -148,4 +148,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get repeatPassword => 'Repeat password';
+
+  @override
+  String get confirmPassword => 'Confirm Password';
 }

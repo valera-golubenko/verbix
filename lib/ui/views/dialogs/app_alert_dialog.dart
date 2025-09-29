@@ -147,7 +147,7 @@ class AppAlertDialog extends StatelessWidget {
         child: DecoratedBox(
           decoration: BoxDecoration(
             borderRadius: borderRadius,
-            color: designs.background,
+            color: designs.mainColor,
           ),
           child: SizedBox(
             height: 44,

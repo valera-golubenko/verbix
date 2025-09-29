@@ -9,7 +9,7 @@ class AppSnackBar {
   AppSnackBar.of(this.context, {this.bottom = 4});
 
   Color _messageTextColor([bool error = false]) {
-    return error ? context.colorScheme.error : context.designs.background;
+    return error ? context.colorScheme.error : context.designs.neutral.tone80;
   }
 
   void showError(String message) => _showAlertSnackBar(message, true);
@@ -74,7 +74,7 @@ class AppSnackBar {
 
     return Icon(
       Icons.info_outline,
-      color: context.designs.primary,
+      color: context.designs.mainColor,
     );
   }
 
@@ -111,7 +111,7 @@ class AppSnackBar {
   }
 
   Gradient _gradient(BuildContext context) {
-    return context.designs.gradientButton;
+    return context.designs.gradient;
   }
 
   BorderRadiusGeometry? get _borderRadius => BorderRadius.circular(50);

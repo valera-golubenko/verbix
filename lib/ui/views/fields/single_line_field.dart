@@ -80,7 +80,7 @@ class _SingleLineFieldState extends State<SingleLineField> {
       borderSide: !widget.withBorder
           ? BorderSide.none
           : BorderSide(
-              color: context.designs.surface,
+              color: context.designs.mainColor,
             ),
       borderRadius: widget.borderRadius ?? BorderRadius.circular(10),
       gapPadding: 1,
@@ -89,19 +89,19 @@ class _SingleLineFieldState extends State<SingleLineField> {
       borderSide: !widget.withBorder
           ? BorderSide.none
           : BorderSide(
-              color: context.designs.surface,
+              color: context.designs.mainColor,
             ),
     );
     final focusedErrorBorder = border.copyWith(
       borderSide: !widget.withBorder
           ? BorderSide.none
-          : BorderSide(color: context.designs.error),
+          : BorderSide(color: context.designs.statusError),
     );
 
     return TextFormField(
       key: widget.key,
       controller: widget.controller,
-      cursorColor: widget.textColor ?? context.designs.textPrimary,
+      cursorColor: widget.textColor ?? context.designs.neutral.tone0,
       maxLines: widget.maxLines,
       maxLength: widget.maxLength,
       textAlign: widget.textAlign,
@@ -110,22 +110,22 @@ class _SingleLineFieldState extends State<SingleLineField> {
       onTapOutside: _onTapOutside,
       maxLengthEnforcement: MaxLengthEnforcement.truncateAfterCompositionEnds,
       style: context.textTheme.bodyMedium?.copyWith(
-        fontSize: widget.fontSize ?? 17,
+        fontSize: widget.fontSize ?? 14,
         fontWeight: widget.fontWeight ?? FontWeight.w900,
-        color: widget.textColor ?? context.designs.textPrimary,
+        color: widget.textColor ?? context.designs.neutral.tone0,
       ),
       scrollPadding: const EdgeInsets.only(),
       keyboardType: widget.textInputType,
       inputFormatters: widget.inputFormatters,
       decoration: InputDecoration(
         contentPadding:
-            widget.padding ?? const EdgeInsets.fromLTRB(16, 14, 16, 14),
+            widget.padding ?? const EdgeInsets.fromLTRB(16, 12, 16, 12),
         prefixIcon: widget.prefixIcon,
         prefix: widget.prefix,
         suffixIcon: widget.suffixIcon,
         hintText: widget.hintText,
         border: InputBorder.none,
-        fillColor: widget.backgroundColor ?? context.designs.surface,
+        fillColor: widget.backgroundColor ?? context.designs.neutral.tone80,
         filled: true,
         focusedBorder: focusedBorder,
         disabledBorder: border,
@@ -136,21 +136,21 @@ class _SingleLineFieldState extends State<SingleLineField> {
         enabled: widget.enable,
         errorMaxLines: 3,
         counterStyle: context.textTheme.bodyMedium?.copyWith(
-          fontSize: widget.fontSize ?? 17,
-          fontWeight: widget.fontWeightHint ?? FontWeight.w900,
-          color: context.designs.textPrimary,
+          fontSize: widget.fontSize ?? 14,
+          fontWeight: widget.fontWeightHint ?? FontWeight.w700,
+          color: context.designs.neutral.tone50,
         ),
         hintStyle: context.textTheme.bodyMedium?.copyWith(
-          fontSize: widget.fontSize ?? 17,
-          fontWeight: widget.fontWeightHint ?? FontWeight.w900,
-          color: widget.hintTextColor ?? context.designs.textPrimary,
+          fontSize: widget.fontSize ?? 14,
+          fontWeight: widget.fontWeightHint ?? FontWeight.w700,
+          color: widget.hintTextColor ?? context.designs.neutral.tone50,
         ),
         errorText: widget.errorText,
         helperText: widget.helperText,
         helperStyle: context.textTheme.bodyMedium?.copyWith(
-          fontSize: widget.fontSize ?? 17,
-          fontWeight: widget.fontWeightHint ?? FontWeight.w900,
-          color: context.designs.textPrimary,
+          fontSize: widget.fontSize ?? 14,
+          fontWeight: widget.fontWeightHint ?? FontWeight.w700,
+          color: context.designs.neutral.tone50,
         ),
       ),
     );

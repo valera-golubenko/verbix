@@ -49,7 +49,7 @@ class _WidgetDialogState extends State<WidgetDialog> {
                       width: double.infinity,
                       padding: const EdgeInsets.fromLTRB(20, 20, 20, 5),
                       decoration: BoxDecoration(
-                        color: context.designs.background,
+                        color: context.designs.mainColor,
                         borderRadius: borderRadius,
                       ),
                       child: widget.child,

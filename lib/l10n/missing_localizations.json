@@ -18,6 +18,7 @@
     "password",
     "createAnAccount",
     "signIn",
-    "repeatPassword"
+    "repeatPassword",
+    "confirmPassword"
   ]
 }

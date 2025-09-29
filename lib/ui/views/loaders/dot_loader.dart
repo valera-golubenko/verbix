@@ -65,7 +65,7 @@ class _RunningDotsAnimationState extends State<RunningDotsAnimation>
             return CustomPaint(
               painter: RunningDotsPainter(
                 _animation.value,
-                color: widget.color ?? context.designs.background,
+                color: widget.color ?? context.designs.secondaryColor,
                 dotRadiusMin: widget.dotRadiusMin,
                 dotRadiusMax: widget.dotRadiusMax,
                 dotCount: widget.dotCount,

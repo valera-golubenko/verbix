@@ -25,7 +25,7 @@ class AppPrimaryIconButton extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.fromLTRB(24, 12, 26, 12),
         decoration: BoxDecoration(
-          gradient: context.designs.gradientButton,
+          gradient: context.designs.gradient,
           borderRadius: BorderRadius.circular(24),
         ),
         child: Row(
@@ -38,7 +38,7 @@ class AppPrimaryIconButton extends StatelessWidget {
               style: context.textTheme.titleMedium?.copyWith(
                 fontSize: 17,
                 fontWeight: FontWeight.w700,
-                color: context.designs.onPrimary,
+                color: context.designs.neutral.tone0,
               ),
             ),
           ],

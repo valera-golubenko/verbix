@@ -4,14 +4,14 @@ import 'package:flutter_base_kit/flutter_base_kit.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-import 'auth_mixin.dart';
+import 'sign_up_mixin.dart';
 
-part 'auth_state.dart';
-part 'auth_cubit.freezed.dart';
+part 'sign_up_state.dart';
+part 'sign_up_cubit.freezed.dart';
 
 @injectable
-class AuthCubit extends BaseCubit<AuthState> with AuthCubitMix {
-  AuthCubit() : super(const AuthState());
+class SignUpCubit extends BaseCubit<SignUpState> with SignUpCubitMix {
+  SignUpCubit() : super(const SignUpState());
 
   Future<void> init() async {
     safeAction(() async {

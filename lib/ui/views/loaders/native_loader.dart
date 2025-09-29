@@ -10,7 +10,7 @@ class NativeLoader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircularProgressIndicator(
-      color: context.designs.primary,
+      color: context.designs.secondaryColor,
       strokeWidth: 2,
       value: value,
     );

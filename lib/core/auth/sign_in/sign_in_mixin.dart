@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base_kit/flutter_base_kit.dart';
 
-import 'auth_cubit.dart';
+import 'sign_in_cubit.dart';
 
-mixin AuthCubitMix on BaseCubit<AuthState> {
+mixin SignInCubitMix on BaseCubit<SignInState> {
   late final emailController = TextEditingController()
     ..clear()
     ..addListener(_emailHandler);

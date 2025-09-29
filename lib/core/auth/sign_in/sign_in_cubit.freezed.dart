@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'auth_cubit.dart';
+part of 'sign_in_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,23 +13,23 @@ part of 'auth_cubit.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$AuthState {
+mixin _$SignInState {
   StateStatus get status;
   String get message;
   String get email;
 
-  /// Create a copy of AuthState
+  /// Create a copy of SignInState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AuthStateCopyWith<AuthState> get copyWith =>
-      _$AuthStateCopyWithImpl<AuthState>(this as AuthState, _$identity);
+  $SignInStateCopyWith<SignInState> get copyWith =>
+      _$SignInStateCopyWithImpl<SignInState>(this as SignInState, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AuthState &&
+            other is SignInState &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.email, email) || other.email == email));
@@ -40,26 +40,27 @@ mixin _$AuthState {
 
   @override
   String toString() {
-    return 'AuthState(status: $status, message: $message, email: $email)';
+    return 'SignInState(status: $status, message: $message, email: $email)';
   }
 }
 
 /// @nodoc
-abstract mixin class $AuthStateCopyWith<$Res> {
-  factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) _then) =
-      _$AuthStateCopyWithImpl;
+abstract mixin class $SignInStateCopyWith<$Res> {
+  factory $SignInStateCopyWith(
+          SignInState value, $Res Function(SignInState) _then) =
+      _$SignInStateCopyWithImpl;
   @useResult
   $Res call({StateStatus status, String message, String email});
 }
 
 /// @nodoc
-class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
-  _$AuthStateCopyWithImpl(this._self, this._then);
+class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
+  _$SignInStateCopyWithImpl(this._self, this._then);
 
-  final AuthState _self;
-  final $Res Function(AuthState) _then;
+  final SignInState _self;
+  final $Res Function(SignInState) _then;
 
-  /// Create a copy of AuthState
+  /// Create a copy of SignInState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -85,8 +86,8 @@ class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
   }
 }
 
-/// Adds pattern-matching-related methods to [AuthState].
-extension AuthStatePatterns on AuthState {
+/// Adds pattern-matching-related methods to [SignInState].
+extension SignInStatePatterns on SignInState {
   /// A variant of `map` that fallback to returning `orElse`.
   ///
   /// It is equivalent to doing:
@@ -101,12 +102,12 @@ extension AuthStatePatterns on AuthState {
 
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_AuthState value)? $default, {
+    TResult Function(_SignInState value)? $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
-      case _AuthState() when $default != null:
+      case _SignInState() when $default != null:
         return $default(_that);
       case _:
         return orElse();
@@ -128,11 +129,11 @@ extension AuthStatePatterns on AuthState {
 
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_AuthState value) $default,
+    TResult Function(_SignInState value) $default,
   ) {
     final _that = this;
     switch (_that) {
-      case _AuthState():
+      case _SignInState():
         return $default(_that);
       case _:
         throw StateError('Unexpected subclass');
@@ -153,11 +154,11 @@ extension AuthStatePatterns on AuthState {
 
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_AuthState value)? $default,
+    TResult? Function(_SignInState value)? $default,
   ) {
     final _that = this;
     switch (_that) {
-      case _AuthState() when $default != null:
+      case _SignInState() when $default != null:
         return $default(_that);
       case _:
         return null;
@@ -184,7 +185,7 @@ extension AuthStatePatterns on AuthState {
   }) {
     final _that = this;
     switch (_that) {
-      case _AuthState() when $default != null:
+      case _SignInState() when $default != null:
         return $default(_that.status, _that.message, _that.email);
       case _:
         return orElse();
@@ -210,7 +211,7 @@ extension AuthStatePatterns on AuthState {
   ) {
     final _that = this;
     switch (_that) {
-      case _AuthState():
+      case _SignInState():
         return $default(_that.status, _that.message, _that.email);
       case _:
         throw StateError('Unexpected subclass');
@@ -236,7 +237,7 @@ extension AuthStatePatterns on AuthState {
   ) {
     final _that = this;
     switch (_that) {
-      case _AuthState() when $default != null:
+      case _SignInState() when $default != null:
         return $default(_that.status, _that.message, _that.email);
       case _:
         return null;
@@ -246,8 +247,8 @@ extension AuthStatePatterns on AuthState {
 
 /// @nodoc
 
-class _AuthState extends AuthState {
-  const _AuthState(
+class _SignInState extends SignInState {
+  const _SignInState(
       {this.status = StateStatus.initial, this.message = '', this.email = ''})
       : super._();
 
@@ -261,19 +262,19 @@ class _AuthState extends AuthState {
   @JsonKey()
   final String email;
 
-  /// Create a copy of AuthState
+  /// Create a copy of SignInState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AuthStateCopyWith<_AuthState> get copyWith =>
-      __$AuthStateCopyWithImpl<_AuthState>(this, _$identity);
+  _$SignInStateCopyWith<_SignInState> get copyWith =>
+      __$SignInStateCopyWithImpl<_SignInState>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AuthState &&
+            other is _SignInState &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.email, email) || other.email == email));
@@ -284,29 +285,29 @@ class _AuthState extends AuthState {
 
   @override
   String toString() {
-    return 'AuthState(status: $status, message: $message, email: $email)';
+    return 'SignInState(status: $status, message: $message, email: $email)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$AuthStateCopyWith<$Res>
-    implements $AuthStateCopyWith<$Res> {
-  factory _$AuthStateCopyWith(
-          _AuthState value, $Res Function(_AuthState) _then) =
-      __$AuthStateCopyWithImpl;
+abstract mixin class _$SignInStateCopyWith<$Res>
+    implements $SignInStateCopyWith<$Res> {
+  factory _$SignInStateCopyWith(
+          _SignInState value, $Res Function(_SignInState) _then) =
+      __$SignInStateCopyWithImpl;
   @override
   @useResult
   $Res call({StateStatus status, String message, String email});
 }
 
 /// @nodoc
-class __$AuthStateCopyWithImpl<$Res> implements _$AuthStateCopyWith<$Res> {
-  __$AuthStateCopyWithImpl(this._self, this._then);
+class __$SignInStateCopyWithImpl<$Res> implements _$SignInStateCopyWith<$Res> {
+  __$SignInStateCopyWithImpl(this._self, this._then);
 
-  final _AuthState _self;
-  final $Res Function(_AuthState) _then;
+  final _SignInState _self;
+  final $Res Function(_SignInState) _then;
 
-  /// Create a copy of AuthState
+  /// Create a copy of SignInState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -315,7 +316,7 @@ class __$AuthStateCopyWithImpl<$Res> implements _$AuthStateCopyWith<$Res> {
     Object? message = null,
     Object? email = null,
   }) {
-    return _then(_AuthState(
+    return _then(_SignInState(
       status: null == status
           ? _self.status
           : status // ignore: cast_nullable_to_non_nullable

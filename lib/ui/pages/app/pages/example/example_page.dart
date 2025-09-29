@@ -16,7 +16,7 @@ class ExamplePage extends StatelessWidget {
     return AppConsumer<ExampleCubit, ExampleState>(
       builder: (state) {
         return Scaffold(
-          backgroundColor: context.designs.background,
+          backgroundColor: context.designs.mainSubtle,
           appBar: EmptyTitle(
             titleText: 'Example Page',
             actions: [

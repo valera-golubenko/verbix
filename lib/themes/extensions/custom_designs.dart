@@ -2,72 +2,65 @@ import 'package:flutter/material.dart';
 
 @immutable
 class CustomDesigns extends ThemeExtension<CustomDesigns> {
-  final Color primary;
-  final Color secondary;
-  final Color background;
-  final Color surface;
-  final Color error;
-  final Color onPrimary;
-  final Color onSecondary;
-  final Color onBackground;
-  final Color onSurface;
-  final Color onError;
-  final Color textPrimary;
-  final Color textSecondary;
-  final Color textDisabled;
-  final LinearGradient gradientButton;
-  final LinearGradient gradientInactiveButton;
-  final LinearGradient gradientAppBar;
+  final Color mainColor;
+  final Color mainDarker;
+  final Color mainLighter;
+  final Color mainSubtle;
+  final Color secondaryColor;
+  final Color secondaryDarker;
+  final Color secondaryLighter;
+  final Color secondarySubtle;
+  final Color statusError;
+  final Color statusWarning;
+  final Color statusInfo;
+  final Color statusSuccess;
+  final ColorsSet neutral;
+  final LinearGradient gradient;
 
   const CustomDesigns._({
-    required this.primary,
-    required this.secondary,
-    required this.background,
-    required this.surface,
-    required this.error,
-    required this.onPrimary,
-    required this.onSecondary,
-    required this.onBackground,
-    required this.onSurface,
-    required this.onError,
-    required this.textPrimary,
-    required this.textSecondary,
-    required this.textDisabled,
-    required this.gradientButton,
-    required this.gradientInactiveButton,
-    required this.gradientAppBar,
+    required this.mainColor,
+    required this.mainDarker,
+    required this.mainLighter,
+    required this.mainSubtle,
+    required this.secondaryColor,
+    required this.secondaryDarker,
+    required this.secondaryLighter,
+    required this.secondarySubtle,
+    required this.statusError,
+    required this.statusWarning,
+    required this.statusInfo,
+    required this.statusSuccess,
+    required this.neutral,
+    required this.gradient,
   });
 
   factory CustomDesigns.light() {
     final base = BaseDesigns.instance;
     return CustomDesigns._(
-      primary: base.sunsetPeach,
-      secondary: base.spicedBrick,
-      background: base.vanillaCream,
-      surface: base.sunsetPeach,
-      error: base.error,
-      onPrimary: base.black,
-      onSecondary: base.black,
-      onBackground: base.black,
-      onSurface: base.abyssBlack,
-      onError: base.error,
-      textPrimary: base.black,
-      textSecondary: base.black.withValues(alpha: 0.7),
-      textDisabled: base.black.withValues(alpha: 0.5),
-      gradientButton: LinearGradient(
-        colors: [base.spicedBrick, base.sunsetPeach],
-        begin: Alignment.centerLeft,
-        end: Alignment.centerRight,
-      ),
-      gradientInactiveButton: LinearGradient(
-        colors: [base.vanillaCream, base.white],
-        begin: Alignment.centerLeft,
-        end: Alignment.centerRight,
-      ),
-      gradientAppBar: LinearGradient(
-        colors: [base.burntMerlot, base.sunsetPeach],
+      mainColor: base.mainColor,
+      mainDarker: base.mainDarker,
+      mainLighter: base.mainLighter,
+      mainSubtle: base.mainSubtle,
+      secondaryColor: base.secondaryColor,
+      secondaryDarker: base.secondaryDarker,
+      secondaryLighter: base.secondaryLighter,
+      secondarySubtle: base.secondarySubtle,
+      statusError: base.statusError,
+      statusWarning: base.statusWarning,
+      statusInfo: base.statusInfo,
+      statusSuccess: base.statusSuccess,
+      neutral: base.neutral,
+      gradient: LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
+        colors: [
+          base.mainColor,
+          base.secondaryColor,
+        ],
+        stops: [
+          0.0,
+          1.0,
+        ],
       ),
     );
   }
@@ -75,74 +68,66 @@ class CustomDesigns extends ThemeExtension<CustomDesigns> {
   factory CustomDesigns.dark() {
     final base = BaseDesigns.instance;
     return CustomDesigns._(
-      primary: base.burntMerlot,
-      secondary: base.sunsetPeach,
-      background: base.abyssBlack,
-      surface: base.burntMerlot,
-      error: base.error,
-      onPrimary: base.white,
-      onSecondary: base.white,
-      onBackground: base.white,
-      onSurface: base.vanillaCream,
-      onError: base.error,
-      textPrimary: base.white,
-      textSecondary: base.white.withValues(alpha: 0.7),
-      textDisabled: base.white.withValues(alpha: 0.5),
-      gradientButton: LinearGradient(
-        colors: [base.burntMerlot, base.spicedBrick],
-        begin: Alignment.centerLeft,
-        end: Alignment.centerRight,
-      ),
-      gradientInactiveButton: LinearGradient(
-        colors: [base.white, base.vanillaCream],
-        begin: Alignment.centerLeft,
-        end: Alignment.centerRight,
-      ),
-      gradientAppBar: LinearGradient(
-        colors: [base.burntMerlot, base.abyssBlack],
+      mainColor: base.mainColor,
+      mainDarker: base.mainDarker,
+      mainLighter: base.mainLighter,
+      mainSubtle: base.mainSubtle,
+      secondaryColor: base.secondaryColor,
+      secondaryDarker: base.secondaryDarker,
+      secondaryLighter: base.secondaryLighter,
+      secondarySubtle: base.secondarySubtle,
+      statusError: base.statusError,
+      statusWarning: base.statusWarning,
+      statusInfo: base.statusInfo,
+      statusSuccess: base.statusSuccess,
+      neutral: base.neutral,
+      gradient: LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
+        colors: [
+          base.mainColor,
+          base.secondaryColor,
+        ],
+        stops: [
+          0.0,
+          1.0,
+        ],
       ),
     );
   }
 
   @override
   ThemeExtension<CustomDesigns> copyWith({
-    Color? primary,
-    Color? secondary,
-    Color? background,
-    Color? surface,
-    Color? error,
-    Color? onPrimary,
-    Color? onSecondary,
-    Color? onBackground,
-    Color? onSurface,
-    Color? onError,
-    Color? textPrimary,
-    Color? textSecondary,
-    Color? textDisabled,
-    LinearGradient? gradientButton,
-    LinearGradient? gradientInactiveButton,
-    LinearGradient? gradientAppBar,
+    Color? mainColor,
+    Color? mainDarker,
+    Color? mainLighter,
+    Color? mainSubtle,
+    Color? secondaryColor,
+    Color? secondaryDarker,
+    Color? secondaryLighter,
+    Color? secondarySubtle,
+    Color? statusError,
+    Color? statusWarning,
+    Color? statusInfo,
+    Color? statusSuccess,
+    ColorsSet? neutral,
+    LinearGradient? gradient,
   }) {
     return CustomDesigns._(
-      primary: primary ?? this.primary,
-      secondary: secondary ?? this.secondary,
-      background: background ?? this.background,
-      surface: surface ?? this.surface,
-      error: error ?? this.error,
-      onPrimary: onPrimary ?? this.onPrimary,
-      onSecondary: onSecondary ?? this.onSecondary,
-      onBackground: onBackground ?? this.onBackground,
-      onSurface: onSurface ?? this.onSurface,
-      onError: onError ?? this.onError,
-      textPrimary: textPrimary ?? this.textPrimary,
-      textSecondary: textSecondary ?? this.textSecondary,
-      textDisabled: textDisabled ?? this.textDisabled,
-      gradientButton: gradientButton ?? this.gradientButton,
-      gradientInactiveButton:
-          gradientInactiveButton ?? this.gradientInactiveButton,
-      gradientAppBar: gradientAppBar ?? this.gradientAppBar,
+      mainColor: mainColor ?? this.mainColor,
+      mainDarker: mainDarker ?? this.mainDarker,
+      mainLighter: mainLighter ?? this.mainLighter,
+      mainSubtle: mainSubtle ?? this.mainSubtle,
+      secondaryColor: secondaryColor ?? this.secondaryColor,
+      secondaryDarker: secondaryDarker ?? this.secondaryDarker,
+      secondaryLighter: secondaryLighter ?? this.secondaryLighter,
+      secondarySubtle: secondarySubtle ?? this.secondarySubtle,
+      statusError: statusError ?? this.statusError,
+      statusWarning: statusWarning ?? this.statusWarning,
+      statusInfo: statusInfo ?? this.statusInfo,
+      statusSuccess: statusSuccess ?? this.statusSuccess,
+      neutral: neutral ?? this.neutral,
+      gradient: gradient ?? this.gradient,
     );
   }
 
@@ -155,81 +140,115 @@ class CustomDesigns extends ThemeExtension<CustomDesigns> {
       return this;
     }
     return CustomDesigns._(
-      primary: Color.lerp(primary, other.primary, t)!,
-      secondary: Color.lerp(secondary, other.secondary, t)!,
-      background: Color.lerp(background, other.background, t)!,
-      surface: Color.lerp(surface, other.surface, t)!,
-      error: Color.lerp(error, other.error, t)!,
-      onPrimary: Color.lerp(onPrimary, other.onPrimary, t)!,
-      onSecondary: Color.lerp(onSecondary, other.onSecondary, t)!,
-      onBackground: Color.lerp(onBackground, other.onBackground, t)!,
-      onSurface: Color.lerp(onSurface, other.onSurface, t)!,
-      onError: Color.lerp(onError, other.onError, t)!,
-      textPrimary: Color.lerp(textPrimary, other.textPrimary, t)!,
-      textSecondary: Color.lerp(textSecondary, other.textSecondary, t)!,
-      textDisabled: Color.lerp(textDisabled, other.textDisabled, t)!,
-      gradientButton: gradientButton,
-      gradientInactiveButton: gradientInactiveButton,
-      gradientAppBar: gradientAppBar,
+      mainColor: Color.lerp(mainColor, other.mainColor, t)!,
+      mainDarker: Color.lerp(mainDarker, other.mainDarker, t)!,
+      mainLighter: Color.lerp(mainLighter, other.mainLighter, t)!,
+      mainSubtle: Color.lerp(mainSubtle, other.mainSubtle, t)!,
+      secondaryColor: Color.lerp(secondaryColor, other.secondaryColor, t)!,
+      secondaryDarker: Color.lerp(secondaryDarker, other.secondaryDarker, t)!,
+      secondaryLighter:
+          Color.lerp(secondaryLighter, other.secondaryLighter, t)!,
+      secondarySubtle: Color.lerp(secondarySubtle, other.secondarySubtle, t)!,
+      statusError: Color.lerp(statusError, other.statusError, t)!,
+      statusWarning: Color.lerp(statusWarning, other.statusWarning, t)!,
+      statusInfo: Color.lerp(statusInfo, other.statusInfo, t)!,
+      statusSuccess: Color.lerp(statusSuccess, other.statusSuccess, t)!,
+      neutral: ColorsSet.lerp(neutral, other.neutral, t),
+      gradient: LinearGradient.lerp(gradient, other.gradient, t) ?? gradient,
     );
   }
 }
 
 @immutable
 class BaseDesigns extends ThemeExtension<BaseDesigns> {
-  final Color vanillaCream;
-  final Color sunsetPeach;
-  final Color spicedBrick;
-  final Color burntMerlot;
-  final Color abyssBlack;
-  final Color error;
-  final Color black;
-  final Color white;
+  final Color mainColor;
+  final Color mainDarker;
+  final Color mainLighter;
+  final Color mainSubtle;
+  final Color secondaryColor;
+  final Color secondaryDarker;
+  final Color secondaryLighter;
+  final Color secondarySubtle;
+  final Color statusError;
+  final Color statusWarning;
+  final Color statusInfo;
+  final Color statusSuccess;
+  final ColorsSet neutral;
 
   const BaseDesigns._({
-    required this.vanillaCream,
-    required this.sunsetPeach,
-    required this.spicedBrick,
-    required this.burntMerlot,
-    required this.abyssBlack,
-    required this.error,
-    required this.black,
-    required this.white,
+    required this.mainColor,
+    required this.mainDarker,
+    required this.mainLighter,
+    required this.mainSubtle,
+    required this.secondaryColor,
+    required this.secondaryDarker,
+    required this.secondaryLighter,
+    required this.secondarySubtle,
+    required this.statusError,
+    required this.statusWarning,
+    required this.statusInfo,
+    required this.statusSuccess,
+    required this.neutral,
   });
 
   static BaseDesigns get instance {
     return const BaseDesigns._(
-      vanillaCream: Color(0xFFFEF4DB),
-      sunsetPeach: Color(0xFFF8A86A),
-      spicedBrick: Color(0xFFB54213),
-      burntMerlot: Color(0xFF4D0C02),
-      abyssBlack: Color(0xFF040000),
-      error: Color(0xFFB00020),
-      black: Color(0xFF000000),
-      white: Color(0xFF7F9FAC),
+      mainColor: Color(0xFF2563EB),
+      mainDarker: Color(0xFFF2659BF),
+      mainLighter: Color(0xFF99BBFF),
+      mainSubtle: Color(0xFFE3EDFF),
+      secondaryColor: Color(0xFFFE9519),
+      secondaryDarker: Color(0xFFFEA419),
+      secondaryLighter: Color(0xFFFEC875),
+      secondarySubtle: Color(0xFFFFF6E8),
+      statusError: Color(0xFFE2222E),
+      statusWarning: Color(0xFFFFCC00),
+      statusInfo: Color(0xFF0063F7),
+      statusSuccess: Color(0xFF06C270),
+      neutral: ColorsSet(
+        tone0: Color(0xFF3A3A3C),
+        tone10: Color(0xFF6B7588),
+        tone20: Color(0xFF515960),
+        tone30: Color(0xFF7D8388),
+        tone40: Color(0xFFA8ACAF),
+        tone50: Color(0xFFBEC1C4),
+        tone60: Color(0xFFEAEBEC),
+        tone70: Color(0xFFF4F4F5),
+        tone80: Color(0xFFFFFFFF),
+      ),
     );
   }
 
   @override
   ThemeExtension<BaseDesigns> copyWith({
-    Color? vanillaCream,
-    Color? sunsetPeach,
-    Color? spicedBrick,
-    Color? burntMerlot,
-    Color? abyssBlack,
-    Color? error,
-    Color? black,
-    Color? white,
+    Color? mainColor,
+    Color? mainDarker,
+    Color? mainLighter,
+    Color? mainSubtle,
+    Color? secondaryColor,
+    Color? secondaryDarker,
+    Color? secondaryLighter,
+    Color? secondarySubtle,
+    Color? statusError,
+    Color? statusWarning,
+    Color? statusInfo,
+    Color? statusSuccess,
+    ColorsSet? neutral,
   }) {
     return BaseDesigns._(
-      vanillaCream: vanillaCream ?? this.vanillaCream,
-      sunsetPeach: sunsetPeach ?? this.sunsetPeach,
-      spicedBrick: spicedBrick ?? this.spicedBrick,
-      burntMerlot: burntMerlot ?? this.burntMerlot,
-      abyssBlack: abyssBlack ?? this.abyssBlack,
-      error: error ?? this.error,
-      black: black ?? this.black,
-      white: white ?? this.white,
+      mainColor: mainColor ?? this.mainColor,
+      mainDarker: mainDarker ?? this.mainDarker,
+      mainLighter: mainLighter ?? this.mainLighter,
+      mainSubtle: mainSubtle ?? this.mainSubtle,
+      secondaryColor: secondaryColor ?? this.secondaryColor,
+      secondaryDarker: secondaryDarker ?? this.secondaryDarker,
+      secondaryLighter: secondaryLighter ?? this.secondaryLighter,
+      secondarySubtle: secondarySubtle ?? this.secondarySubtle,
+      statusError: statusError ?? this.statusError,
+      statusWarning: statusWarning ?? this.statusWarning,
+      statusInfo: statusInfo ?? this.statusInfo,
+      statusSuccess: statusSuccess ?? this.statusSuccess,
+      neutral: neutral ?? this.neutral,
     );
   }
 
@@ -242,14 +261,58 @@ class BaseDesigns extends ThemeExtension<BaseDesigns> {
       return this;
     }
     return BaseDesigns._(
-      vanillaCream: Color.lerp(vanillaCream, other.vanillaCream, t)!,
-      sunsetPeach: Color.lerp(sunsetPeach, other.sunsetPeach, t)!,
-      spicedBrick: Color.lerp(spicedBrick, other.spicedBrick, t)!,
-      burntMerlot: Color.lerp(burntMerlot, other.burntMerlot, t)!,
-      abyssBlack: Color.lerp(abyssBlack, other.abyssBlack, t)!,
-      error: Color.lerp(error, other.error, t)!,
-      black: Color.lerp(black, other.black, t)!,
-      white: Color.lerp(white, other.white, t)!,
+      mainColor: Color.lerp(mainColor, other.mainColor, t)!,
+      mainDarker: Color.lerp(mainDarker, other.mainDarker, t)!,
+      mainLighter: Color.lerp(mainLighter, other.mainLighter, t)!,
+      mainSubtle: Color.lerp(mainSubtle, other.mainSubtle, t)!,
+      secondaryColor: Color.lerp(secondaryColor, other.secondaryColor, t)!,
+      secondaryDarker: Color.lerp(secondaryDarker, other.secondaryDarker, t)!,
+      secondaryLighter:
+          Color.lerp(secondaryLighter, other.secondaryLighter, t)!,
+      secondarySubtle: Color.lerp(secondarySubtle, other.secondarySubtle, t)!,
+      statusError: Color.lerp(statusError, other.statusError, t)!,
+      statusWarning: Color.lerp(statusWarning, other.statusWarning, t)!,
+      statusInfo: Color.lerp(statusInfo, other.statusInfo, t)!,
+      statusSuccess: Color.lerp(statusSuccess, other.statusSuccess, t)!,
+      neutral: ColorsSet.lerp(neutral, other.neutral, t),
     );
   }
+}
+
+class ColorsSet {
+  final Color tone0;
+  final Color tone10;
+  final Color tone20;
+  final Color tone30;
+  final Color tone40;
+  final Color tone50;
+  final Color tone60;
+  final Color tone70;
+  final Color tone80;
+
+  static ColorsSet lerp(ColorsSet a, ColorsSet b, double t) {
+    return ColorsSet(
+      tone0: Color.lerp(a.tone0, b.tone0, t)!,
+      tone10: Color.lerp(a.tone10, b.tone10, t)!,
+      tone20: Color.lerp(a.tone20, b.tone20, t)!,
+      tone30: Color.lerp(a.tone30, b.tone30, t)!,
+      tone40: Color.lerp(a.tone40, b.tone40, t)!,
+      tone50: Color.lerp(a.tone50, b.tone50, t)!,
+      tone60: Color.lerp(a.tone60, b.tone60, t)!,
+      tone70: Color.lerp(a.tone70, b.tone70, t)!,
+      tone80: Color.lerp(a.tone80, b.tone80, t)!,
+    );
+  }
+
+  const ColorsSet({
+    this.tone0 = Colors.transparent,
+    this.tone10 = Colors.transparent,
+    this.tone20 = Colors.transparent,
+    this.tone30 = Colors.transparent,
+    this.tone40 = Colors.transparent,
+    this.tone50 = Colors.transparent,
+    this.tone60 = Colors.transparent,
+    this.tone70 = Colors.transparent,
+    this.tone80 = Colors.transparent,
+  });
 }

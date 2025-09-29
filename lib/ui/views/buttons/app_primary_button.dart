@@ -32,9 +32,8 @@ class AppPrimaryButton extends StatelessWidget {
         width: width,
         padding: padding ?? const EdgeInsets.fromLTRB(24, 12, 26, 12),
         decoration: BoxDecoration(
-          gradient: isActive
-              ? context.designs.gradientButton
-              : context.designs.gradientInactiveButton,
+          gradient:
+              isActive ? context.designs.gradient : context.designs.gradient,
           borderRadius: BorderRadius.circular(50),
         ),
         child: Text(
@@ -44,8 +43,8 @@ class AppPrimaryButton extends StatelessWidget {
             fontSize: fontSize ?? 17,
             fontWeight: fontWeight ?? FontWeight.w700,
             color: isActive
-                ? context.designs.onPrimary
-                : context.designs.textDisabled,
+                ? context.designs.neutral.tone0
+                : context.designs.neutral.tone0,
           ),
         ),
       ),

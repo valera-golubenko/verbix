@@ -82,8 +82,8 @@ class _AppCupertinoDatePickerState extends State<AppCupertinoDatePicker> {
     return SafeArea(
       child: Container(
         decoration: BoxDecoration(
-          color: _designs.surface,
-          border: Border.all(color: _designs.surface),
+          color: _designs.mainColor,
+          border: Border.all(color: _designs.mainColor),
           borderRadius: BorderRadius.circular(20),
         ),
         height: _heightPicker,
@@ -97,7 +97,7 @@ class _AppCupertinoDatePickerState extends State<AppCupertinoDatePicker> {
                 data: CupertinoThemeData(
                   textTheme: CupertinoTextThemeData(
                     pickerTextStyle: _textTheme.bodyMedium?.copyWith(
-                      color: _designs.onSurface,
+                      color: _designs.mainColor,
                       fontSize: 17.0,
                     ),
                   ),
@@ -117,8 +117,8 @@ class _AppCupertinoDatePickerState extends State<AppCupertinoDatePicker> {
                 Expanded(
                   child: AppColoredButton(
                     onTap: _onCancel,
-                    color: _designs.error,
-                    colorText: _designs.background,
+                    color: _designs.statusError,
+                    colorText: _designs.neutral.tone0,
                     text: context.strings.cancel,
                   ),
                 ),
@@ -156,7 +156,7 @@ class _AppCupertinoDatePickerState extends State<AppCupertinoDatePicker> {
             child: CupertinoPicker(
               itemExtent: _heightItem,
               scrollController: yearController,
-              backgroundColor: _designs.surface,
+              backgroundColor: _designs.mainColor,
               onSelectedItemChanged: (int index) {
                 setState(() {
                   _currentDate = _clampDate(
@@ -171,7 +171,7 @@ class _AppCupertinoDatePickerState extends State<AppCupertinoDatePicker> {
                       child: Text(
                         DateTimeParser.dateToYearString(d),
                         style: TextStyle(
-                          color: _designs.background,
+                          color: _designs.mainColor,
                           fontSize: 17.0,
                         ),
                       ),
@@ -184,7 +184,7 @@ class _AppCupertinoDatePickerState extends State<AppCupertinoDatePicker> {
           child: CupertinoPicker(
             itemExtent: _heightItem,
             scrollController: _monthController,
-            backgroundColor: _designs.surface,
+            backgroundColor: _designs.mainColor,
             onSelectedItemChanged: (int index) {
               setState(() {
                 _currentDate =
@@ -200,7 +200,7 @@ class _AppCupertinoDatePickerState extends State<AppCupertinoDatePicker> {
                   child: Text(
                     DateTimeParser.dateToMonthString(m),
                     style: TextStyle(
-                      color: _designs.background,
+                      color: _designs.neutral.tone0,
                       fontSize: 16.0,
                     ),
                   ),
@@ -213,7 +213,7 @@ class _AppCupertinoDatePickerState extends State<AppCupertinoDatePicker> {
           child: CupertinoPicker(
             itemExtent: _heightItem,
             scrollController: _dayController,
-            backgroundColor: _designs.surface,
+            backgroundColor: _designs.mainColor,
             onSelectedItemChanged: (int index) {
               setState(() {
                 _currentDate = _clampDate(DateTime(year, month, index + 1));
@@ -227,7 +227,7 @@ class _AppCupertinoDatePickerState extends State<AppCupertinoDatePicker> {
                   child: Text(
                     DateTimeParser.dateToDayString(d),
                     style: TextStyle(
-                      color: _designs.background,
+                      color: _designs.neutral.tone0,
                       fontSize: 16.0,
                     ),
                   ),

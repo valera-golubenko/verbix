@@ -40,7 +40,7 @@ class AppColoredIconButton extends StatelessWidget {
               style: context.textTheme.titleMedium?.copyWith(
                 fontSize: 17,
                 fontWeight: FontWeight.w700,
-                color: context.designs.onPrimary,
+                color: context.designs.neutral.tone0,
               ),
             ),
           ],

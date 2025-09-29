@@ -112,7 +112,7 @@ class AppDialog {
               : Text(
                   content,
                   style: context.textTheme.bodyMedium?.copyWith(
-                    color: context.designs.background,
+                    color: context.designs.neutral.tone0,
                     fontSize: 20,
                   ),
                 ),
@@ -121,7 +121,7 @@ class AppDialog {
               AppSecondaryButton(
                 onTap: () => Navigator.pop(context, false),
                 width: double.infinity,
-                colorText: context.designs.surface,
+                colorText: context.designs.neutral.tone0,
                 fontWeight: FontWeight.w500,
                 text: cancel,
               ),
@@ -130,7 +130,7 @@ class AppDialog {
               AppSecondaryButton(
                 onTap: () => Navigator.pop(context, true),
                 width: double.infinity,
-                colorText: context.designs.surface,
+                colorText: context.designs.neutral.tone0,
                 fontWeight: FontWeight.w500,
                 text: confirm,
               ),
