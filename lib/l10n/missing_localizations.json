@@ -19,6 +19,8 @@
     "createAnAccount",
     "signIn",
     "repeatPassword",
-    "confirmPassword"
+    "confirmPassword",
+    "areYouNotRegistered",
+    "register"
   ]
 }

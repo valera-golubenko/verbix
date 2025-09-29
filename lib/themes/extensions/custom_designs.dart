@@ -84,10 +84,7 @@ class CustomDesigns extends ThemeExtension<CustomDesigns> {
       gradient: LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
-        colors: [
-          base.mainColor,
-          base.secondaryColor,
-        ],
+        colors: [base.secondarySubtle, base.mainSubtle],
         stops: [
           0.0,
           1.0,

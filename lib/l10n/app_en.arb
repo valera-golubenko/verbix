@@ -45,5 +45,7 @@
     "createAnAccount": "Create an account",
     "signIn": "Sign in",
     "repeatPassword": "Repeat password",
-    "confirmPassword": "Confirm Password"
+    "confirmPassword": "Confirm Password",
+    "areYouNotRegistered": "Are you not registered?",
+    "register": "Register"
 }

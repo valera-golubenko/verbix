@@ -8,13 +8,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../../core/auth/sign_up/sign_up_cubit.dart';
+import '../../../../../gen/assets.gen.dart';
 import '../../../../../l10n/localization_helper.dart';
 import '../../../../../models/enums/sign_type/sign_type.dart';
 import '../../../../../routes/router.dart';
 import '../../../../../themes/app_theme.dart';
 
 import '../../../../../themes/extensions/custom_designs.dart';
-import '../../../../views/buttons/app_button.dart';
 import '../../../../views/buttons/app_colored_button.dart';
 import '../../../../views/fields/single_line_field.dart';
 import 'components/social_button.dart';
@@ -55,31 +55,33 @@ class _SignUpPageState extends State<SignUpPage> {
     return AppConsumer<SignUpCubit, SignUpState>(
       builder: (state) {
         return Scaffold(
-          backgroundColor: const Color(0xFFFFFFFF),
           body: SafeArea(
-            child: ListView(
-              children: [
-                const SizedBox(height: 48, width: double.infinity),
-                _buildTitle(),
-                const SizedBox(height: 32),
-                _buildSocialAuthButton(SignType.apple).wrap,
-                const SizedBox(height: 24),
-                _buildSocialAuthButton(SignType.google).wrap,
-                const SizedBox(height: 24),
-                _buildOrDivider().wrap,
-                const SizedBox(height: 24),
-                _buildFullName().wrap,
-                const SizedBox(height: 16),
-                _buildEmail().wrap,
-                const SizedBox(height: 16),
-                _buildPassword().wrap,
-                const SizedBox(height: 16),
-                _buildConfirmPassword().wrap,
-                const SizedBox(height: 36),
-                _buildLetsGoButton().wrap,
-                const SizedBox(height: 16),
-                _buildAlreadyGotAnAccount().wrap
-              ],
+            child: Container(
+              decoration: BoxDecoration(gradient: _designs.gradient),
+              child: ListView(
+                children: [
+                  const SizedBox(height: 86, width: double.infinity),
+                  _buildTitle(),
+                  const SizedBox(height: 32),
+                  _buildSocialAuthButton(SignType.apple).wrap,
+                  const SizedBox(height: 24),
+                  _buildSocialAuthButton(SignType.google).wrap,
+                  const SizedBox(height: 24),
+                  _buildOrDivider().wrap,
+                  const SizedBox(height: 24),
+                  _buildFullName().wrap,
+                  const SizedBox(height: 16),
+                  _buildEmail().wrap,
+                  const SizedBox(height: 16),
+                  _buildPassword().wrap,
+                  const SizedBox(height: 16),
+                  _buildConfirmPassword().wrap,
+                  const SizedBox(height: 36),
+                  _buildLetsGoButton().wrap,
+                  const SizedBox(height: 16),
+                  _buildAlreadyGotAnAccount().wrap
+                ],
+              ),
             ),
           ),
         );
@@ -92,7 +94,7 @@ class _SignUpPageState extends State<SignUpPage> {
       _strings.welcomeToVerbix,
       textAlign: TextAlign.center,
       style: _textTheme.headlineSmall?.copyWith(
-        color: _designs.secondaryColor,
+        color: const Color(0xFF904113),
         fontWeight: FontWeight.w900,
       ),
     );
@@ -129,6 +131,10 @@ class _SignUpPageState extends State<SignUpPage> {
     return SingleLineField(
       controller: _cubit.fullNameController,
       hintText: _strings.fullName,
+      prefixIcon: Padding(
+        padding: const EdgeInsets.all(12),
+        child: SvgPicture.asset(Assets.svg.icons.user),
+      ),
     );
   }
 
@@ -136,6 +142,10 @@ class _SignUpPageState extends State<SignUpPage> {
     return SingleLineField(
       controller: _cubit.emailController,
       hintText: _strings.email,
+      prefixIcon: Padding(
+        padding: const EdgeInsets.all(12),
+        child: SvgPicture.asset(Assets.svg.icons.mail),
+      ),
     );
   }
 
@@ -143,6 +153,10 @@ class _SignUpPageState extends State<SignUpPage> {
     return SingleLineField(
       controller: _cubit.passwordController,
       hintText: _strings.password,
+      prefixIcon: Padding(
+        padding: const EdgeInsets.all(12),
+        child: SvgPicture.asset(Assets.svg.icons.lock),
+      ),
     );
   }
 
@@ -150,6 +164,10 @@ class _SignUpPageState extends State<SignUpPage> {
     return SingleLineField(
       controller: _cubit.confirmPasswordController,
       hintText: _strings.confirmPassword,
+      prefixIcon: Padding(
+        padding: const EdgeInsets.all(12),
+        child: SvgPicture.asset(Assets.svg.icons.lock),
+      ),
     );
   }
 

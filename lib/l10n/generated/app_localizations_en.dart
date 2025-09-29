@@ -151,4 +151,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get confirmPassword => 'Confirm Password';
+
+  @override
+  String get areYouNotRegistered => 'Are you not registered?';
+
+  @override
+  String get register => 'Register';
 }

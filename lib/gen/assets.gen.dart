@@ -86,8 +86,17 @@ class $AssetsSvgIconsGen {
   /// File path: assets/svg/icons/google.svg
   String get google => 'assets/svg/icons/google.svg';
 
+  /// File path: assets/svg/icons/lock.svg
+  String get lock => 'assets/svg/icons/lock.svg';
+
+  /// File path: assets/svg/icons/mail.svg
+  String get mail => 'assets/svg/icons/mail.svg';
+
+  /// File path: assets/svg/icons/user.svg
+  String get user => 'assets/svg/icons/user.svg';
+
   /// List of all assets
-  List<String> get values => [apple, chevronLeft, google];
+  List<String> get values => [apple, chevronLeft, google, lock, mail, user];
 }
 
 class Assets {

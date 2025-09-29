@@ -24,9 +24,9 @@ class SocialButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.fromLTRB(0, 12, 0, 12),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: const Color(0xFFE9EFFD),
-        ),
+            borderRadius: BorderRadius.circular(10),
+            color: context.designs.mainSubtle,
+            border: Border.all(color: context.designs.neutral.tone40)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -35,7 +35,7 @@ class SocialButton extends StatelessWidget {
             Text(
               type.getName(context.strings),
               style: context.textTheme.bodyMedium?.copyWith(
-                color: Colors.black,
+                color: context.designs.neutral.tone0,
                 fontWeight: FontWeight.w700,
               ),
             ),
