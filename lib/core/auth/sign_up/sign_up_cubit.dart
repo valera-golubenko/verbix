@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_base_kit/flutter_base_kit.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -31,7 +33,73 @@ class SignUpCubit extends BaseCubit<SignUpState> with SignUpCubitMix {
     emit(state.copyWith(status: StateStatus.loaded));
   }
 
-  Future<void> appleAuth() async {}
+  @override
+  Future<UserModel?> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+    required ValueChanged<AuthEventsType> typedErrorHandler,
+  }) async {
+    return errorParser(() async {
+      try {
+        final credential = await _firebaseAuth.signInWithEmailAndPassword(
+          email: email,
+          password: password,
+        );
+        return UserModel.fromFirebase(credential.user)?.copyWith(
+          signInType: SignType.email,
+        );
+      } on FirebaseAuthException catch (e) {
+        final type = AuthEventsType.values.firstWhereOrNull((t) {
+          return t.apiKey == e.code;
+        });
+        if (type != null) typedErrorHandler(type);
+        if (type != null) return null;
+        rethrow;
+      }
+    });
+  }
 
-  Future<void> googleAuth() async {}
+  Future<void> appleAuth(
+    ValueChanged<AuthAccountModel> successfulHandler,
+  ) async {
+    await safeAction(() async {
+      emit(state.copyWith(status: StateStatus.refresh));
+      final result = await _authService.signInApple();
+      emit(state.copyWith(status: StateStatus.loaded));
+      final data = result?.data;
+
+      if (data == null) return;
+      final accessToken = data.accessToken;
+      final refreshToken = data.refreshToken;
+      final showOnboarding = data.account.showOnboarding;
+      final account = data.account;
+      await _tokenService.saveToken(accessToken);
+      await _tokenService.saveRefreshToken(refreshToken);
+      await _completeOnboardingService.setCompleteOnboarding(!showOnboarding);
+      await _authAccountStorage.saveAuthAccount(account);
+      successfulHandler(account);
+    });
+  }
+
+  Future<void> googleAuth(
+    ValueChanged<AuthAccountModel> successfulHandler,
+  ) async {
+    await safeAction(() async {
+      emit(state.copyWith(status: StateStatus.refresh));
+      final result = await _authService.signInGoogle();
+      emit(state.copyWith(status: StateStatus.loaded));
+      final data = result?.data;
+
+      if (data == null) return;
+      final accessToken = data.accessToken;
+      final refreshToken = data.refreshToken;
+      final showOnboarding = data.account.showOnboarding;
+      final account = data.account;
+      await _tokenService.saveToken(accessToken);
+      await _tokenService.saveRefreshToken(refreshToken);
+      await _completeOnboardingService.setCompleteOnboarding(!showOnboarding);
+      await _authAccountStorage.saveAuthAccount(account);
+      successfulHandler(account);
+    });
+  }
 }
